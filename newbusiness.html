@@ -119,15 +119,15 @@ html, body {
 .kicker-label { display: none; }
 
 .section-title {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 17px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   color: var(--gold);
   text-align: center;
-  padding-left: 0.18em;
+  padding-left: 0.12em;
   margin-top: 0;
-  line-height: 1.7;
+  line-height: 1.75;
   position: relative;
 }
 .section-title::before {
@@ -258,37 +258,54 @@ html, body {
   line-break: normal;
 }
 .sp-br { display: none; }
-@media (max-width: 600px) { .sp-br { display: inline; } .pc-br { display: none; } }
+@media (max-width: 600px) {
+  .sp-br { display: inline; }
+  .pc-br { display: none; }
+  .title-br { display: inline; }
+}
 
 /* 本文：明朝で読ませる。行間は締め、段落間を広く */
 .section-body p {
   font-family: 'Zen Old Mincho', serif;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.95;
+  line-height: 2.05;
   color: var(--ink-2);
-  letter-spacing: 0.02em;
-  margin-bottom: 2.0em;
+  letter-spacing: 0.03em;
+  margin: 0 auto 1.8em;
   text-align: left;
   max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .section-body p:last-child { margin-bottom: 0; }
 .section-body p.flow { text-align: left; }
+
+/* ボックス要素の直前・直後のflow段落との余白を均一化 */
+.section-body .intro-box + p,
+.section-body .gap-result + p,
+.section-body .gap-compare + p,
+.section-body .condition-box + p,
+.section-body .checklist + p,
+.section-body .pillars + p {
+  margin-top: 0;
+}
+/* takeaway直後のp.flowは少し詰める */
+.takeaway + p.flow,
+.section-body p.takeaway + p.flow {
+  margin-top: -24px;
+}
 
 /* 章の結論：大きく振る（動）。見出しに次ぐ強度 */
 .section-body p.takeaway, .takeaway {
   font-family: 'Zen Old Mincho', serif;
   font-size: 17px;
   font-weight: 500;
-  line-height: 1.8;
+  line-height: 1.9;
   color: var(--ink);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-align: center;
-  margin: 22px auto 60px;
+  margin: 0 auto 56px;
   max-width: 24em;
-  padding-bottom: 32px;
+  padding-bottom: 36px;
 }
 .takeaway .gold-text { color: var(--gold-d); }
 .takeaway .accent { color: var(--seiji-d); }
@@ -326,11 +343,11 @@ html, body {
   line-height: 2.0;
 }
 .em {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: 'Zen Old Mincho', serif;
   color: var(--gold-d);
-  font-weight: 700;
-  font-size: 1.05em;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: 1.02em;
+  letter-spacing: 0.04em;
 }
 .gold-text { color: var(--gold-d); }
 .seiji-text { color: var(--seiji-d); }
@@ -369,13 +386,13 @@ html, body {
 }
 .hero-title {
   font-family: 'Zen Old Mincho', serif;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  line-height: 1.55;
+  line-height: 1.7;
   color: var(--ink);
   padding-left: 0.04em;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 .hero-title .accent { color: var(--seiji-d); }
 .hero-sub {
@@ -388,12 +405,12 @@ html, body {
   text-align: left;
 }
 .hero-program {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: 'Zen Old Mincho', serif;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   color: var(--gold-d);
-  padding-left: 0.16em;
+  padding-left: 0.14em;
   margin-bottom: 18px;
 }
 .hero-badge {
@@ -406,6 +423,8 @@ html, body {
   border: 1px solid var(--rule-gold);
   border-radius: 1px;
   background: var(--paper);
+  line-height: 1.8;
+  text-align: center;
 }
 
 /* =========================================================
@@ -479,11 +498,11 @@ html, body {
 }
 .intro-box {
   max-width: 26em;
-  margin: 40px auto 28px;
-  padding: 24px 24px;
+  margin: 44px auto 36px;
+  padding: 28px 24px;
   font-family: 'Zen Old Mincho', serif;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 2.0;
   letter-spacing: 0.05em;
   color: var(--ink);
   text-align: center;
@@ -714,7 +733,7 @@ html, body {
   opacity: 0.6;
   margin: 14px auto 0;
 }
-.pillar p { font-family: 'Zen Kaku Gothic New', sans-serif !important; font-size: 14px !important; font-weight: 500 !important; line-height: 1.85 !important; color: var(--ink-2) !important; margin: 0 auto !important; max-width: 22em; text-align: center !important; }
+.pillar p { font-family: 'Zen Old Mincho', serif !important; font-size: 14px !important; font-weight: 400 !important; line-height: 1.95 !important; color: var(--ink-2) !important; margin: 0 auto !important; max-width: 22em; text-align: center !important; }
 
 /* =========================================================
    2コース
@@ -889,11 +908,12 @@ html, body {
   line-height: 1.5;
 }
 .value-card-body {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: 'Zen Old Mincho', serif;
   font-size: 13.5px;
-  line-height: 1.85;
+  line-height: 1.95;
   color: var(--ink-2);
   margin-bottom: 10px;
+  letter-spacing: 0.02em;
 }
 .value-card-why {
   font-family: 'Zen Old Mincho', serif;
@@ -1005,12 +1025,13 @@ html, body {
   color: var(--ink-2);
 }
 .ai-step-text strong {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 700;
+  font-family: 'Zen Old Mincho', serif;
+  font-weight: 600;
   color: var(--gold-d);
   display: block;
   font-size: 15px;
   margin-bottom: 4px;
+  letter-spacing: 0.04em;
 }
 .ai-step-arrow {
   text-align: center;
@@ -1041,6 +1062,7 @@ html, body {
   text-align: center;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--rule-gold);
+  line-height: 1.8;
 }
 .condition-list {
   list-style: none;
@@ -1126,9 +1148,10 @@ html, body {
   color: var(--ink);
 }
 .line-step-text strong {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 700;
+  font-family: 'Zen Old Mincho', serif;
+  font-weight: 600;
   color: var(--gold-d);
+  letter-spacing: 0.03em;
 }
 .line-step-sub {
   font-family: 'Zen Old Mincho', serif;
@@ -1240,8 +1263,8 @@ html, body {
   border: 1px solid var(--earth-line);
 }
 .gap-label {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 700;
+  font-family: 'Zen Old Mincho', serif;
+  font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.1em;
   color: var(--ink-3);
@@ -1272,7 +1295,7 @@ html, body {
   font-size: 20px;
   color: var(--gold);
   opacity: 0.6;
-  padding: 10px 0;
+  padding: 14px 0;
 }
 .gap-question {
   background: var(--earth-2);
@@ -1281,12 +1304,13 @@ html, body {
   padding: 20px 22px;
 }
 .gap-question p {
-  font-family: 'Zen Kaku Gothic New', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'Zen Old Mincho', serif !important;
+  font-weight: 600 !important;
   font-size: 14px !important;
   color: var(--gold-d) !important;
   margin-bottom: 12px !important;
   text-align: left !important;
+  letter-spacing: 0.04em !important;
 }
 .gap-question ul {
   list-style: none;
@@ -1308,23 +1332,56 @@ html, body {
   font-size: 13px;
 }
 .gap-result {
-  background: linear-gradient(135deg, #2a2018 0%, #1e1c12 100%);
-  border: 1px solid var(--rule-gold);
-  border-radius: 3px;
-  padding: 20px 22px;
+  padding: 28px 24px;
   font-family: 'Zen Old Mincho', serif;
   font-size: 15px;
-  line-height: 1.8;
-  color: var(--ink-2);
+  line-height: 2.1;
+  color: var(--ink);
   text-align: center;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--rule-gold);
+  border-bottom: 1px solid var(--rule-gold);
+  margin: 0 auto;
 }
 .gap-result span {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
+  font-family: 'Zen Old Mincho', serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--ink);
+  display: block;
+  line-height: 2.1;
+  letter-spacing: 0.04em;
+}
+/* gap-result内：ゴールド明朝 */
+.gap-result-gold {
+  font-family: 'Zen Old Mincho', serif;
+  font-weight: 600;
+  font-size: 15px;
   color: var(--gold-d);
   display: block;
-  margin-top: 6px;
+  line-height: 2.0;
+  letter-spacing: 0.04em;
+}
+/* gap-result内：通常テキスト（1行空け相当の余白） */
+.gap-result-body {
+  font-family: 'Zen Old Mincho', serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--ink-3);
+  display: block;
+  line-height: 2.0;
+  letter-spacing: 0.03em;
+  margin-top: 1.2em;
+}
+/* 引用ボックス（左ボーダー・アース背景） */
+.quote-box {
+  padding: 22px 22px 22px 24px;
+  border-left: 2px solid var(--rule-gold);
+  background: var(--earth);
+  border-radius: 0 3px 3px 0;
+  overflow: hidden;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 /* =========================================================
@@ -1417,9 +1474,9 @@ html, body {
 @media (max-width: 480px) {
   .section { padding: 76px 22px; }
   .hero { padding: 76px 22px 60px; }
-  .hero-title { font-size: 31px; letter-spacing: 0.02em; }
-  .section-title { font-size: 17px; }
-  .takeaway { font-size: 17px; }
+  .hero-title { font-size: 26px; letter-spacing: 0.02em; line-height: 1.7; }
+  .section-title { font-size: 16px; letter-spacing: 0.08em; }
+  .takeaway { font-size: 16px; }
   .price-card { padding-left: 22px; padding-right: 22px; }
   .intro-box span[style*="white-space:nowrap"] { white-space: normal !important; }
 }
@@ -1445,284 +1502,447 @@ html, body {
   <!-- ===================== HERO ===================== -->
   <header class="hero">
     <div class="hero-brand">KAMPO STAND</div>
-    <h1 class="hero-title">学んできたことを、<br>あなたらしい仕事の形へ。</h1>
-    <p class="hero-sub">漢方・薬膳・占いの知識や経験を整理し、鑑定・相談・商品・講座など、自分らしいサービスとして形にしていく半年間の実践ビジネスプログラムです。<br><br>「学んだけれど、どう仕事にすればいいか分からない」「自分の強みを活かした活動を作りたい」「好きなことを、収入につながる形に育てたい」。そんな悩みや夢を、具体的なサービスへ変えていきます。</p>
-    <div class="hero-program">漢方占い講座　実践ビジネスプログラム</div>
-    <div class="hero-badge">1週間限定｜特別モニター募集</div>
+    <h1 class="hero-title"><span class="accent">"心と体を読み解く技術"を、</span><br>あなたの仕事に活かす。</h1>
+    <p class="hero-sub">漢方・薬膳・占い・施術・相談・美容・教育など、今ある学びや経験に、体質と性質を読み解く技術を加え、相談・商品・講座・サロンメニューとして使える形にしていく半年間の実践ビジネスプログラムです。</p>
+    <div class="hero-program">漢方占い実践ビジネスプログラム</div>
+    <div class="hero-badge">先着2名｜6/26(金)24時まで<br>特別モニター募集</div>
   </header>
 
   <!-- ===================== HERO直下CTA ===================== -->
   <section class="section reveal" style="padding-top:60px;padding-bottom:56px;border-top:none;">
     <div class="section-body" style="margin-top:0;">
       <div class="condition-box" style="max-width:34em;">
-        <div class="condition-box-title">1週間限定｜特別モニター募集</div>
-        <p class="flow" style="margin-bottom:16px;">現在、「漢方占い実践ビジネスプログラム」の特別モニターを1週間限定で募集しています。</p>
-        <p class="flow" style="margin-top:16px;margin-bottom:16px;">AI漢方占い鑑定ツールへの反響を受けて、<span class="em">「学んできたことを仕事にしたい」「自分の活動に取り入れたい」「鑑定や商品として形にしたい」</span>という方へ向けて作った、半年間の実践型プログラムです。</p>
-        <p class="flow" style="margin-bottom:20px;">一人ひとりの活動内容に合わせて深く伴走するため、今回は<span class="em">先着2名だけの募集</span>です。</p>
+        <div class="condition-box-title">先着2名｜6/26(金)24時まで<br>特別モニター募集</div>
+        <p class="flow" style="margin-bottom:16px;">現在、「漢方占い実践ビジネスプログラム」の特別モニターを募集しています。</p>
+        <p class="flow" style="margin-top:16px;margin-bottom:16px;">一人ひとりの活動に合わせて、読み解き、メニュー設計、商品づくり、発信、見せ方まで<span class="em">個別に見ていく</span>ため、今回は<span class="em">先着2名のみ</span>の募集です。</p>
+        <p class="flow" style="margin-bottom:20px;">公式LINEで「ビジネスプログラム」と送信後、アンケートにご回答いただいた方へ、講座で実際に使用している<span class="em">特別資料PDF</span>をお送りします。</p>
         <a class="btn" href="https://lin.ee/ux3HSzn" target="_blank" rel="noopener"><span class="btn-text">LINEで詳しい案内を受け取る</span></a>
-        <p class="btn-note" style="margin-top:10px;">公式LINEで「ビジネスプログラム」と送信後、<br>アンケートにご回答いただいた方へ、<br>講座で実際に使用している特別資料をお送りします。</p>
+        <p class="btn-note" style="margin-top:10px;">お申し込み前に、まずは資料をご覧いただき、<br>ご自身の活動に合いそうかご確認ください。</p>
       </div>
     </div>
   </section>
 
   <!-- ===================== 悩み・共感 ===================== -->
   <section class="section reveal">
-    <h2 class="section-title">学んできたのに、<span class="title-br"><br></span>仕事の形が見えない方へ</h2>
+    <h2 class="section-title">漢方や薬膳を学んだのに、<span class="title-br"><br></span>仕事の形が見えない方へ</h2>
     <div class="section-body">
-      <p class="flow">資格を取った。講座も受けた。知識も増えた。<br>それでも、いざ仕事にしようとすると、別の悩みが出てくることがあります。</p>
+      <p class="flow">漢方や薬膳を学んできた方から、よく聞く悩みがあります。</p>
+      <p class="flow" style="font-family:'Zen Old Mincho',serif;line-height:2.2;color:var(--ink);">知識は増えた。<br>講座も受けた。<br>資格も取った。<br>それなのに、いざ人に相談されると、<br>何をどう伝えればいいのか迷ってしまう。</p>
+      <p class="flow">たとえば、こんなことはありませんか。</p>
 
       <ul class="checklist">
-        <li>鑑定や相談メニューとして、何を出せばいいか決めきれていない</li>
-        <li>診断はできても、なぜその提案になるのかを説明する言葉が整理できていない</li>
-        <li>漢方茶や商品を扱いたいけれど、商品づくりや仕入れの流れが分からない</li>
-        <li>マルシェ、サロン、お店、オンライン相談など、自分に合う始め方が見えていない</li>
-        <li>SNS、チラシ、POP、パッケージなどで、どう見せれば選ばれるのかが分からない</li>
+        <li>専門用語を、家族やお客様に分かりやすく話せない</li>
+        <li>体質チェックはできても、その後の提案に自信が持てない</li>
+        <li>食材、体質、症状、季節の知識がバラバラでつながらない</li>
+        <li>自分の見立てに自信が持てず、結局いつも同じ提案になってしまう</li>
+        <li>漢方茶や薬膳茶を扱いたいけれど、商品にする流れが見えない</li>
+        <li>サロンや施術に体質別のセルフケア提案を加えたいけれど、メニューの流れが分からない</li>
+        <li>SNSで発信しているけれど、仕事の案内につながっていない</li>
+        <li>学んできたことが多すぎて、自分の仕事としてまとまらない</li>
       </ul>
 
-      <p class="takeaway" style="margin-top:32px;">これは、知識が足りないからではありません。<br><span class="gold-text">学んだことを、仕事として使える形にするための設計が必要だからです。</span></p>
+      <p class="takeaway" style="margin-top:32px;">これらは、学んできた人ほど出てきやすい悩みです。<br><span class="gold-text">知識を学ぶことと、仕事として形にすることは、別の設計が必要だからです。</span></p>
 
-      <p class="flow">漢方、薬膳、占いを学ぶ講座では、知識や理論をしっかり学べます。それはとても大切な土台です。</p>
-      <p class="flow">ただ、仕事として始める時には、診断の根拠をどう説明するか、商品やサービスにどうつなげるか、仕入れや販売の流れをどう作るか、価格をどう決めるか、SNSやチラシ、POP、パッケージでどう見せるかまで考える必要があります。</p>
-      <p class="flow">このプログラムでは、その「学んだ知識を、商品やサービスとして見せる・伝える・売る部分」まで一緒に整えていきます。</p>
-
-      <p class="flow">では、なぜ学んだ知識をそのまま仕事にしにくいのか。理由は、講座で学ぶことと、仕事として形にすることの間に、別の設計が必要だからです。</p>
+      <p class="flow">このプログラムでは、そこを一人ひとりの活動に合わせて、一緒に形にしていきます。</p>
     </div>
   </section>
 
-  <!-- ===================== 一般的な講座との違い ===================== -->
+  <!-- ===================== 漢方占いとは何か ===================== -->
   <section class="section reveal">
-    <h2 class="section-title">知識は増えた。<span class="title-br"><br></span>でも、仕事の形にならない理由</h2>
+    <h2 class="section-title">漢方占いとは？</h2>
     <div class="section-body">
-      <p class="flow">漢方、薬膳、占いを学ぶ講座では、知識や理論を学ぶことができます。それは大切な土台です。</p>
-      <p class="flow">ただ、実際に仕事として始めようとすると、講座の中では扱われにくい部分が出てきます。</p>
-      <p class="flow">診断の根拠をどう伝えるか。商品やサービスにどうつなげるか。価格をどう決めるか。SNSやチラシ、POP、パッケージでどう見せるか。</p>
-      <p class="flow">ここが整理できていないと、知識は増えても、仕事として動かしにくくなります。</p>
+      <p class="takeaway">未来を当てる占いではありません。<br><span class="gold-text">心と体を深く読み解く、独自のメソッドです。</span></p>
 
-      <div class="gap-compare" style="margin:28px 0;">
-        <div class="gap-col gap-col--other">
-          <div class="gap-label">一般的な講座でありがちなこと</div>
-          <ul class="gap-list">
-            <li>細かい知識は増えるけれど、実際の使い方までは分かりにくい</li>
-            <li>暗記や理論が中心で、目の前のお客さまへの提案に落とし込みにくい</li>
-            <li>ノウハウは聞けても、自分の仕事や強みに合わせた形にしにくい</li>
-            <li>使えるツールや商品、提供方法が決まっていて、自由に展開しにくい</li>
-            <li>講座修了後の仕入れ、開業準備、販売方法までは相談しにくい</li>
-            <li>SNS、チラシ、POP、パッケージなどの見せ方は自分で整えることになりやすい</li>
-          </ul>
+      <p class="flow">「漢方占い」と聞くと、未来を当てる占いのように思われるかもしれません。でも、私が伝えている漢方占いは、単なる占いではありません。</p>
+      <p class="flow">占いの考え方である十干十二支を使って、漢方の五臓六腑とつなげながら、その人の心と体を深く読み解く独自メソッドです。</p>
+
+      <div class="pillars" style="margin-top:28px;">
+        <div class="pillar">
+          <div class="pillar-title">1. 生まれの体質</div>
+          <p>生年月日から、生まれ持った体質や性質、もともとの傾向を読みます。</p>
         </div>
-        <div class="gap-arrow">↓</div>
-        <div class="gap-question">
-          <p>このプログラムで扱うこと</p>
-          <ul>
-            <li>診断の根拠を、お客さまに伝わる言葉にする</li>
-            <li>鑑定や相談を、実際のメニューとして組み立てる</li>
-            <li>漢方茶や商品を作り、仕入れや販売の流れを考える</li>
-            <li>価格を決め、継続できる仕事として設計する</li>
-            <li>SNS、チラシ、POP、パッケージで選ばれる見せ方にする</li>
-            <li>学んだ知識を、自分の活動に合う商品やサービスへ変えていく</li>
+        <div class="pillar">
+          <div class="pillar-title">2. 今の状態</div>
+          <p>体調、生活習慣、ストレス、季節、天候などから、今の不調の背景を見ます。</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">3. 運気の流れ</div>
+          <p>過去、現在、未来の流れをふまえて、変化しやすい時期や整えるタイミングを見ます。</p>
+        </div>
+      </div>
+
+      <div class="intro-box" style="margin:36px auto 28px;">
+        <p style="font-family:'Zen Old Mincho',serif;font-size:15px;line-height:2.3;color:var(--ink);text-align:center;margin:0;">
+          漢方占いは、未来を当てるための占いではなく、<br>
+          その人に合う整え方を選ぶための、<br>
+          心と体の読み解きメソッドです。<br>
+          <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:400;color:var(--gold-d);font-size:13px;letter-spacing:0.14em;display:block;margin-top:18px;">中身は、かなりガチの漢方です。</span>
+        </p>
+      </div>
+
+      <p class="flow">ただし、薬膳だけでなく、さまざまな分野に応用できます。3つを重ねることで、その人に合う整え方が選びやすくなります。</p>
+    </div>
+  </section>
+
+  <!-- ===================== なぜ漢方占いで提案に根拠が持てるのか ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">今の症状だけでなく、<span class="title-br"><br></span>生まれの体質まで重ねて見る</h2>
+    <div class="section-body">
+      <p class="takeaway">体質を見る漢方と、性質を見る占い。<br><span class="gold-text">その両方を重ねることで、提案の根拠が作りやすくなります。</span></p>
+
+      <p class="flow">従来の漢方の弁証は、今出ている症状や状態から判断します。もちろん、それはとても大切です。</p>
+      <p class="flow">ただ、実際の相談では、同じような症状に見えても、合うものが人によって違うことがあります。</p>
+
+      <div class="quote-box" style="margin:32px 0;">
+        <p style="font-family:'Zen Old Mincho',serif;font-size:13.5px;line-height:2.2;color:var(--ink-2);margin:0;word-break:keep-all;">
+          冷えているのに、温めるだけでは整わない。<br>
+          疲れているのに、補うだけでは変わらない。<br>
+          イライラしているのに、巡らせるだけでは足りない。<br>
+          むくんでいるのに、水をさばくだけではうまくいかない。
+        </p>
+      </div>
+
+      <p class="flow">相談の現場では、こういうことが起こります。その時に、「とりあえず試してみましょう」「様子を見てみましょう」と言うしかない場面もあります。</p>
+      <p class="flow">漢方占いでは、ここに生年月日から読む<span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">「生まれ持った体質」</span>を重ねます。</p>
+      <p class="flow">今の症状だけを見るのではなく、その人がもともと持っている体質の傾向と、今出ている不調、生活習慣、季節、天候、運気の流れを合わせて見る。</p>
+      <p class="flow">すると、<span class="em">なぜその症状が出やすいのか</span>、<span class="em">どの方向から整えると合いやすいのか</span>、<span class="em">どんな提案がその人に合いやすいのか</span>が見えやすくなります。</p>
+
+      <div class="gap-result" style="margin:40px 0;">
+        <span class="gap-result-gold">その人に合ったものを、生まれの体質という根拠を持って選べるようになる。</span>
+        <span class="gap-result-body">これが、漢方占いの大きな特徴です。</span>
+      </div>
+
+      <p class="flow">弁証で悩んだことのある方には、ぜひ知ってほしい技術です。</p>
+
+      <img src="https://kampostand1.netlify.app/teabreak.png" alt="お茶の時間" style="display:block;width:100%;margin:24px auto 0;border-radius:3px;">
+    </div>
+  </section>
+
+  <!-- ===================== 漢方占いは仕事にどう活かせるのか ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">漢方占いを<span class="title-br"><br></span>仕事にするのではなく、<span class="title-br"><br></span>今の仕事に活かす</h2>
+    <div class="section-body">
+      <p class="takeaway">心と体を読み解く技術を、<br><span class="gold-text">今ある仕事や得意な分野に活かすためのメソッドです。</span></p>
+
+      <p class="flow">漢方占いは、「漢方占い師になるためのもの」ではありません。</p>
+
+      <div class="condition-box" style="max-width:34em;margin:28px auto;">
+        <div class="condition-box-title">こんな仕事・活動に活かせます</div>
+        <ul class="condition-list">
+          <li><span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">漢方相談・薬膳</span>　整え方の根拠に、食材やお茶選びに</li>
+          <li><span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">アロマ・ハーブ</span>　香りや植物の提案に</li>
+          <li><span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">鍼灸・セラピー</span>　施術前後の体質別セルフケアに</li>
+          <li><span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">美容・エステ</span>　体質別のケア提案に</li>
+          <li><span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">占い・カウンセリング</span>　性質だけでなく整え方まで</li>
+          <li><span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">教育・研修</span>　相手の特性理解に</li>
+          <li><span style="font-family:'Zen Old Mincho',serif;font-weight:600;color:var(--gold-d);">コンサル・マネジメント</span>　人の傾向や関わり方の理解に</li>
+        </ul>
+      </div>
+
+      <p class="flow">その人に合うものを、ただ感覚で選ぶのではなく、心と体を読み解いた上で提案できるようになる。それが、漢方占いを仕事に活かすということです。</p>
+      <p class="flow">今の仕事に、「なぜこの人にはこれが合うのか」を説明できる力が加わると、相談、提案、商品、発信の深さが変わります。</p>
+    </div>
+  </section>
+
+  <!-- ===================== このプログラムで何をするのか ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">読む、形にする、<span class="title-br"><br></span>使えるようにする</h2>
+    <div class="section-body">
+      <p class="takeaway">学んで終わりではなく、<br><span class="gold-text">実際に出せる形にしていく半年間です。</span></p>
+
+      <div class="pillars" style="margin-top:8px;margin-bottom:32px;">
+        <div class="pillar">
+          <div class="pillar-title">読む</div>
+          <p>生まれの体質、今の状態、運気の流れを重ねて、その人の心と体を読み解きます。</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">形にする</div>
+          <p>その読み解きを、相談、鑑定、漢方茶、薬膳茶、講座、サロンメニュー、オンライン相談など、自分の仕事に合う形へ落とし込みます。</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">使えるようにする</div>
+          <p>提案文、発信、商品説明、チラシ、POP、プロフィール、募集文など、実際に人へ届けるための見せ方と伝え方まで整えます。</p>
+        </div>
+      </div>
+
+      <div class="condition-box" style="margin-top:8px;">
+        <div class="condition-box-title">具体的に扱うこと</div>
+        <ul class="condition-list">
+          <li>体質と性質の読み解き・診断の根拠づくり</li>
+          <li>相談の流れ・提案文づくり</li>
+          <li>鑑定ツールとAIの活用</li>
+          <li>漢方茶・薬膳茶への展開、仕入れ・価格・販売の流れ</li>
+          <li>講座・セルフケアメニュー・サロンや施術への組み込み</li>
+          <li>SNS投稿・募集文・プロフィール・チラシ・POP・商品説明・パッケージ</li>
+          <li>ロゴ・世界観のデザインサポート</li>
+          <li>申し込み導線の設計・必要に応じた薬機法や表現の確認</li>
+        </ul>
+      </div>
+
+      <div class="pull" style="margin:44px 0 0;">
+        内容が良くても、伝わらなければ選ばれません。
+      </div>
+      <p class="flow" style="margin-top:32px;">このプログラムでは、鑑定や相談の中身だけでなく、SNSで何を伝えるか、チラシやPOPでどう見せるか、商品説明やパッケージでどんな印象を届けるかまで一緒に整えていきます。</p>
+      <p class="flow">漢方や薬膳の世界観を、難しく見せるのではなく、必要な人に伝わる形へ。あなたの雰囲気や活動に合わせて、見せ方と伝え方も整えていきます。</p>
+
+      <div class="intro-box" style="margin:36px auto;">
+        <p style="font-family:'Zen Old Mincho',serif;font-size:15px;line-height:2.2;color:var(--ink);text-align:center;margin:0;">
+          知識があって、ツールがあって、<br>
+          そしてそれを実際に届ける形がある。<br>
+          <span style="font-family:'Zen Old Mincho',serif;font-weight:400;color:var(--gold-d);font-size:13px;letter-spacing:0.12em;display:block;margin-top:16px;">この三つが揃って、はじめて仕事になります。</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 一般的な講座やオンラインサロンで起こりやすい悩み ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">学びを仕事にしようとした時、<span class="title-br"><br></span>出てきやすい悩み</h2>
+    <div class="section-body">
+      <p class="flow">漢方や薬膳を学ぶことは、とても大切です。ただ、それを仕事にしようとすると、知識とは別の悩みが出てくることがあります。</p>
+
+      <div class="gap-compare" style="margin:36px 0;">
+        <div class="gap-col gap-col--other">
+          <div class="gap-label">学びを仕事にする時に出やすい壁</div>
+          <ul class="gap-list">
+            <li>専門用語を分かりやすく話せない</li>
+            <li>理論ばかりで日常や提案に落とし込めない</li>
+            <li>知識がバラバラでつながらない</li>
+            <li>自分の見立てに自信が持てない</li>
+            <li>相談メニューにしたいけれど、何を聞いて何を渡せばいいか分からない</li>
+            <li>具体的な集客方法が分からない・継続できるメニューが作れない</li>
+            <li>薬機法など実務で必要な知識が整理できない</li>
           </ul>
         </div>
         <div class="gap-arrow">↓</div>
         <div class="gap-result">
-          <span>一般的な講座で学べるのは知識や理論、基本的な考え方です。このプログラムで扱うのは、その先にある「仕事として使える形にすること」です。</span>
+          <span class="gap-result-body">漢方や薬膳を学べる場所は増えました。</span>
+          <span class="gap-result-gold">でも、それを人に伝え、相談や商品にして、発信や見せ方まで含めて仕事として形にするところまで、一緒に見てくれる場所はまだ少ないと思っています。</span>
         </div>
       </div>
 
-      <div class="intro-box" style="margin:32px auto;">
-        <p style="font-family:'Zen Old Mincho',serif;font-size:15px;line-height:2.3;color:var(--ink);text-align:center;margin:0;">
-          診断の根拠。<br>
-          鑑定ツールとAIの使い方。<br>
-          商品づくり、仕入れ、価格、販売。<br>
-          SNS、チラシ、POP、パッケージ。<br>
-          見せ方と伝え方。<br>
-          <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:400;color:var(--gold-d);font-size:13px;letter-spacing:0.14em;display:block;margin-top:18px;white-space:nowrap;">学びを仕事に変えるために必要な部分を、一つの場所で扱います。</span>
-        </p>
-      </div>
-
-      <p class="flow">では、実際に学んだことは、どんな仕事の形になるのか。具体的な事例を見てみてください。</p>
+      <p class="flow">このプログラムでは、読み解きだけで終わらせず、仕事として使える形にするところまで扱います。</p>
     </div>
   </section>
 
   <!-- ===================== 事例 ===================== -->
   <section class="section reveal">
-    <h2 class="section-title">学んだことは、<span class="title-br"><br></span>こんな形で仕事になります</h2>
+    <h2 class="section-title">漢方占いの読み解きは、<span class="title-br"><br></span>こんな仕事の形になります</h2>
     <div class="section-body">
-      <p class="takeaway">実際に、漢方や薬膳、占いの学びを、<br><span class="gold-text">自分の仕事として形にした方がいます。</span></p>
+      <p class="takeaway">漢方占いの使い方は、<br>一つではありません。<br><span class="gold-text">形も、始め方も、使い方も、それぞれです。</span></p>
 
       <p class="flow">始め方は一つではありません。マルシェ、商品販売、講座、サロンメニュー、オンライン相談など、その人の状況に合わせて形を作っていきます。</p>
 
       <div class="case">
         <img src="https://kampostand1.netlify.app/marche.png" alt="マルシェで漢方占い" style="display:block;width:100%;margin:0 auto 16px;border-radius:3px;">
-        <div class="case-tag">主婦の方｜マルシェで漢方占い×処方茶を提案</div>
-        <p class="flow">もともとは、薬膳や漢方茶に興味があり、いつか何か始めたいと思っていた方でした。ただ、何を商品にすればいいのか、どう説明すればお客さまに伝わるのかが分からず、最初の形が作れずにいました。</p>
+        <div class="case-tag">事例1｜マルシェで、体質を見てその人に合うお茶を提案する</div>
+        <p class="flow">ただ「むくみにいいお茶です」と伝えるのではなく——</p>
         <div class="case-ba">
           <div class="contrast">
             <div class="contrast-row before">
-              <div class="contrast-label">活かしたこと</div>
-              <p class="flow">漢方茶そのものではなく、「なぜこの人にこのお茶が合うのか」を説明できる読み取りの視点。</p>
+              <div class="contrast-label">従来の伝え方</div>
+              <p class="flow">「これが体にいいです」と症状への対処を案内するだけ。</p>
             </div>
             <div class="contrast-arrow">↓</div>
             <div class="contrast-row after">
-              <div class="contrast-label">仕事になった形</div>
-              <p class="flow">月1〜2回のマルシェで、生年月日から体質と性質を読み取り、「あなたへの処方茶」として提案。相談と商品がつながる形になりました。</p>
-            </div>
-          </div>
-        </div>
-        <p class="flow" style="margin-top:14px;">子育ての合間にできる範囲から始めて、今は月に数万円の売上につながっています。</p>
-      </div>
-
-      <div class="case">
-        <div class="case-tag">薬膳を学んだ方｜薬膳茶の販売・講座へ</div>
-        <p class="flow">薬膳の知識はあるけれど、誰に何を提案すればいいのかが見えず、発信やメニュー化に迷っていた方です。</p>
-        <div class="case-ba">
-          <div class="contrast">
-            <div class="contrast-row before">
-              <div class="contrast-label">活かしたこと</div>
-              <p class="flow">季節の養生だけではなく、相手の体質と性質に合わせて提案する視点。</p>
-            </div>
-            <div class="contrast-arrow">↓</div>
-            <div class="contrast-row after">
-              <div class="contrast-label">仕事になった形</div>
-              <p class="flow">「あなたはこういう体質だから、この時期はこう整えるとよい」と伝えられるようになり、体質に合わせた薬膳茶の販売や、少人数の講座として形になりました。</p>
+              <div class="contrast-label">読み解きがあると</div>
+              <p class="flow">「あなたはこういう体質の傾向があるので、この時期はこのお茶が合いやすいです」と伝えられるようになり、商品に意味が生まれます。</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="case">
-        <div class="case-tag">サロンの方｜体質・性質診断を新メニューへ</div>
-        <p class="flow">すでに施術やカウンセリングの仕事をしている方にとっては、漢方占いは新しいメニューの軸になります。施術前のカウンセリングで体質と性質を読み取り、「なぜこの施術や養生が必要なのか」を説明できるようになることで、サービスの納得感が変わります。</p>
+        <div class="case-tag">事例2｜薬膳の知識を、体質別の薬膳茶や講座に変える</div>
+        <p class="flow">季節の養生だけではなく——</p>
         <div class="case-ba">
           <div class="contrast">
             <div class="contrast-row before">
-              <div class="contrast-label">変わったこと</div>
-              <p class="flow">「なんとなく良かった」という感想だったものが——</p>
+              <div class="contrast-label">従来の伝え方</div>
+              <p class="flow">「この季節は、この食材がいいです」と一般的な情報を伝えるだけ。</p>
             </div>
             <div class="contrast-arrow">↓</div>
             <div class="contrast-row after">
-              <div class="contrast-label">仕事になった形</div>
-              <p class="flow">「この人に診てもらうと、自分のことが分かる」という信頼に変わり、口コミが増えました。</p>
+              <div class="contrast-label">読み解きがあると</div>
+              <p class="flow">「この人にはなぜこの食材が合うのか」「この体質の人には、どういう食べ方がよいのか」を説明できるようになり、講座や商品にしやすくなります。</p>
             </div>
           </div>
         </div>
       </div>
 
-      <p class="flow" style="margin-top:8px;">形も、始め方も、使い方も、それぞれです。共通しているのは、学んだ知識をそのまま出すのではなく、診断の根拠、商品やサービス、販売の流れまで一緒に整えたことです。</p>
+      <div class="case">
+        <div class="case-tag">事例3｜サロンや施術前後のカウンセリングに取り入れる</div>
+        <p class="flow">施術後に「今日はこうでした」で終わるのではなく——</p>
+        <div class="case-ba">
+          <div class="contrast">
+            <div class="contrast-row before">
+              <div class="contrast-label">従来の流れ</div>
+              <p class="flow">施術は良かったけれど、「なんとなく良かった」という感想で終わる。</p>
+            </div>
+            <div class="contrast-arrow">↓</div>
+            <div class="contrast-row after">
+              <div class="contrast-label">読み解きがあると</div>
+              <p class="flow">「あなたはこういう体質なので、家ではこう整えるとよいです」と伝えられ、セルフケア提案の納得感と信頼が変わります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <p class="flow">では、このプログラムでは、あなた自身の活動をどんな形にしていくのか。半年間で整えていくものを具体的に見ていきます。</p>
+      <p class="flow" style="margin-top:8px;">共通しているのは、学んだ知識をそのまま出すのではなく、「なぜこの人にはこれが合うのか」を説明できる読み解きの軸を持ったことです。その軸があると、相談、商品、講座、サロンメニュー、発信がつながりやすくなります。</p>
     </div>
   </section>
 
-  <!-- ===================== この半年間で形にしていくもの ===================== -->
+  <!-- ===================== 半年間のカリキュラム ===================== -->
   <section class="section reveal">
-    <h2 class="section-title">この半年間で、<span class="title-br"><br></span>形にしていくもの</h2>
+    <h2 class="section-title">半年間で扱うこと</h2>
     <div class="section-body">
-      <p class="takeaway">あなたの学びも、同じように仕事の形にできます。<br><span class="gold-text">半年間で、具体的に整えていきます。</span></p>
+      <p class="takeaway">学びを増やすだけではなく、<br><span class="gold-text">実際に出せる形にしていく半年間です。</span></p>
+
+      <div class="phase">
+        <div class="phase-period">1ヶ月目</div>
+        <div class="phase-title">棚卸しと方向づけ</div>
+        <p>漢方占いの考え方を整理し、自分の活動や経験を棚卸しします。今ある学び、資格、経験、商品、SNS、やりたい活動を出しながら、どの形で仕事に活かせそうかを見ていきます。</p>
+      </div>
+      <div class="phase">
+        <div class="phase-period">2ヶ月目</div>
+        <div class="phase-title">読み解きの軸を作る</div>
+        <p>生まれの体質、今の状態、運気の流れを読み解きます。体質と性質をどう見るか、なぜその提案になるのかを整理し、お客様に伝わる言葉へ変えていきます。</p>
+      </div>
+      <div class="phase">
+        <div class="phase-period">3ヶ月目</div>
+        <div class="phase-title">鑑定ツールとAIで展開する</div>
+        <p>鑑定ツールとAIを使い、鑑定結果をレポート、投稿、商品説明、相談の流れに展開します。AIに任せるのではなく、読み解きの軸を持った上で、仕事に使える文章へ整えます。</p>
+      </div>
+      <div class="phase">
+        <div class="phase-period">4ヶ月目</div>
+        <div class="phase-title">サービスと商品を設計する</div>
+        <p>相談、鑑定、漢方茶、薬膳茶、講座、サロンメニューなど、自分に合うサービスの形を作ります。対象者、内容、価格、提供方法、申込の流れまで具体化します。</p>
+      </div>
+      <div class="phase">
+        <div class="phase-period">5ヶ月目</div>
+        <div class="phase-title">見せ方と伝え方を整える</div>
+        <p>SNS、チラシ、POP、パッケージ、プロフィール、募集文など、見せ方と伝え方を整えます。内容が良くても伝わらなければ選ばれません。商品やサービスの魅力が伝わる形にしていきます。</p>
+      </div>
+      <div class="phase">
+        <div class="phase-period">6ヶ月目</div>
+        <div class="phase-title">モニター実践と今後の計画</div>
+        <p>モニター実践、改善、今後3ヶ月の行動計画を作ります。実際に出してみて、反応を見ながら調整し、受講後に何をするかまで決めていきます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 半年後に手元に残るもの ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">半年後、手元に残るもの</h2>
+    <div class="section-body">
+      <p class="takeaway">ただ受講して終わりではなく、<br><span class="gold-text">自分の仕事として使えるものを一緒に作っていきます。</span></p>
+
+      <p class="flow">このプログラムでは、半年間で実際に使うものを作っていきます。</p>
 
       <div class="future-cards">
-
         <div class="future-card">
           <div class="future-card-mark">◆</div>
-          <div class="future-card-title">診断の根拠を説明できる</div>
-          <div class="future-card-body">体質と性質をどう読み取り、なぜその提案になるのか。感覚だけに頼らず、自分の言葉で説明できる状態を作ります。</div>
+          <div class="future-card-title">読み取りの型を身につける</div>
+          <div class="future-card-body">生年月日から体質と性質を読み解く漢方占いのメソッドを、現場で使える形で習得します。感覚だけに頼らず、説明できる言葉の型を持ちます。</div>
         </div>
-
         <div class="future-card">
           <div class="future-card-mark">◆</div>
-          <div class="future-card-title">自分のサービスができる</div>
-          <div class="future-card-body">鑑定、相談、漢方茶、講座、サロンメニュー、マルシェ出店、オンライン相談など、今の自分に合う提供の形を作ります。</div>
+          <div class="future-card-title">受講生専用ツールを使いこなす</div>
+          <div class="future-card-body">一般公開版より詳しく心理と体質を読み解ける専用ツールを、初日から実際の鑑定に使います。難しい設定は不要です。</div>
         </div>
-
         <div class="future-card">
           <div class="future-card-mark">◆</div>
-          <div class="future-card-title">商品づくりや仕入れを考えられる</div>
-          <div class="future-card-body">漢方茶や関連商品を扱う場合に、何を商品にするか、どう仕入れるか、どう提案するかまで具体的に考えていきます。</div>
+          <div class="future-card-title">AIと組み合わせて効率化する</div>
+          <div class="future-card-body">発信文、鑑定レポート、メニュー表の文章——AIを使ってスピーディに動かせる仕組みを構築します。</div>
         </div>
-
         <div class="future-card">
           <div class="future-card-mark">◆</div>
-          <div class="future-card-title">価格と販売方法を決められる</div>
-          <div class="future-card-body">ミニ鑑定、個別相談、講座、商品販売など、それぞれの形に合わせて、価格や販売の流れを設計します。</div>
+          <div class="future-card-title">メニュー・価格・発信を一緒に設計する</div>
+          <div class="future-card-body">何を、いくらで、どう届けるか。あなたの強みや状況に合わせて、講師と一対一で設計します。</div>
         </div>
-
         <div class="future-card">
           <div class="future-card-mark">◆</div>
-          <div class="future-card-title">見せ方と伝え方が整う</div>
-          <div class="future-card-body">SNSで何を伝えるか、チラシやPOPでどう見せるか、パッケージで何を感じてもらうか。商品やサービスの魅力が伝わる形を整えます。</div>
+          <div class="future-card-title">ロゴ・世界観のデザインサポート</div>
+          <div class="future-card-body">あなただけのビジュアルを、デザイン経験を持つ講師が一緒に作ります。ロゴ、パッケージ、メニュー表の世界観まで一緒に整えます。</div>
         </div>
-
         <div class="future-card">
           <div class="future-card-mark">◆</div>
-          <div class="future-card-title">始めたあとも相談できる</div>
-          <div class="future-card-body">実際に始めると、価格、提案、発信、商品、相談対応などの調整が必要になります。半年の実践後も、1年間フォローします。</div>
+          <div class="future-card-title">動き出したあとも1年間フォロー</div>
+          <div class="future-card-body">半年で終わりではなく、修了後も1年間、迷ったときに相談できる環境が続きます。講座で使った資料・ツールは、修了後も自由にお使いいただけます。</div>
         </div>
-
       </div>
 
-      <p class="flow" style="margin-top:24px;">このプログラムで目指すのは、ただ学ぶことではなく、学んできたことを仕事として使える状態にすることです。診断の根拠、商品やサービスの形、販売の流れ、見せ方と伝え方まで、あなたの活動に合わせて一緒に整えていきます。</p>
+      <p class="flow" style="margin-top:32px;">「何をメニューにすればいいか分からない」「自分の強みがどこにあるのか分からない」「商品や発信や見せ方まで、自分ひとりでは決めきれない」。そうした部分を、一つずつ具体的な形に変えていく半年間です。</p>
 
-      <p class="flow">ここで土台になるのが、漢方と占いを掛け合わせた読み解きです。</p>
-    </div>
-  </section>
-
-  <!-- ===================== なぜ掛け合わせるのか ===================== -->
-  <section class="section reveal">
-    <h2 class="section-title">なぜ、漢方と占いを<span class="title-br"><br></span>掛け合わせるのか</h2>
-    <div class="section-body">
-      <p class="takeaway">体質を見る漢方と、性質を見る占い。<br><span class="gold-text">その両方を重ねることで、提案の根拠が作りやすくなります。</span></p>
-
-      <p class="flow">漢方は、今の体質を見るのが得意です。気血水や五臓のバランス、冷えや熱、疲れやすさ、胃腸の弱さなど、今の体に起きていることを読み解きます。一方で占いは、生まれ持った性質や行動のくせ、無理をしやすい方向、相手への言葉の伝わり方を見るのが得意です。</p>
-      <p class="flow">人は、今の体だけで生きているわけでも、生まれ持った性質だけで生きているわけでもありません。変わりにくい性質と、今整えられる体質。その両方を重ねることで、<span class="em">「なぜこの人はこうなりやすいのか」「どう整えると自然に力を出しやすいのか」</span>が見えてきます。</p>
-      <p class="flow">ここでいう占いは、未来を当てるものではありません。生年月日から、<span class="em">その人を理解するためのものさし</span>として使います。</p>
-      <p class="flow">この読み解きがあるから、鑑定、相談、漢方茶、薬膳、講座、サロンメニューなどへ展開しやすくなります。「なんとなく合いそう」ではなく、「なぜこの人にはこれが合うのか」を説明できることが、仕事として信頼される土台になります。</p>
-      <p class="flow">この読み解きを、実際の仕事に使える形へ落とし込んでいくのが、このプログラムです。</p>
-      <img src="https://kampostand1.netlify.app/teabreak.png" alt="お茶の時間" style="display:block;width:100%;margin:24px auto 0;border-radius:3px;">
-    </div>
-  </section>
-
-  <!-- ===================== このプログラムとは ===================== -->
-  <section class="section reveal">
-    <h2 class="section-title">このプログラムで<span class="title-br"><br></span>作っていくもの</h2>
-    <div class="section-body">
-      <p class="takeaway">その読み解きを土台に、<br><span class="gold-text">あなたの仕事として使える形に整えていきます。</span></p>
-
-      <div class="condition-box" style="margin-bottom:28px;">
-        <div class="condition-box-title">こんな方を対象にしています</div>
-        <ul class="condition-list">
-          <li>漢方、薬膳、占いを学んだことがある方</li>
-          <li>資格や知識を、鑑定や相談メニューとして形にしたい方</li>
-          <li>漢方茶や商品づくり、仕入れ、販売にも関心がある方</li>
-          <li>マルシェ、サロン、お店、オンライン相談など、自分に合う形で始めたい方</li>
-          <li>鑑定ツールやAIを活用しながら、仕事として動かせるサービスを作りたい方</li>
-        </ul>
-        <p class="flow" style="margin-top:14px;font-size:13.5px;color:var(--ink-3);">すでに学んできた知識や経験を、具体的なサービス、商品、販売の流れへ整えていくためのプログラムです。</p>
+      <div class="condition-box" style="margin-top:36px;">
+        <div class="condition-box-title">半年間の実践プログラム ＋ 修了後1年間のフォロー</div>
+        <p class="flow" style="margin-bottom:14px;">学んで終わりではなく、動き出してからが本番です。半年間の実践に加え、修了後も1年間、迷ったときや壁にぶつかったときに相談できる環境を用意しています。一人にしないことが、続ける力になります。</p>
+        <p class="flow" style="font-size:13.5px;color:var(--ink-3);margin-bottom:0;">講座で使った資料・ツールは修了後も自由にお使いいただけます。多くの講座は「学んだら終わり」。このプログラムは、形になって、動いて、育つところまでを一緒に見ます。</p>
       </div>
 
-      <p class="flow">このプログラムでは、漢方占いの読み解きを土台に、あなたの知識や経験を、鑑定・相談・商品・講座・販売・発信の形へ整えていきます。</p>
-
-      <p class="flow">大切なのは、学んだ内容を増やすことではなく、今ある知識を「実際に出せるサービス」にすることです。</p>
-
-      <p class="flow">具体的には、半年間で以下の内容を扱います。</p>
-
-      <div class="condition-box" style="margin-top:28px;">
-        <div class="condition-box-title">半年間で扱うこと</div>
-        <ul class="condition-list">
-          <li><strong style="color:var(--gold-d);font-family:'Zen Kaku Gothic New',sans-serif;">診断の根拠を整理する</strong><br>生年月日から体質と性質を読み解き、「なぜこの人にはこの整え方が合うのか」を説明できるようにします。感覚だけに頼らず、提案の理由を言葉にしていきます。</li>
-          <li><strong style="color:var(--gold-d);font-family:'Zen Kaku Gothic New',sans-serif;">鑑定ツールとAIを使う</strong><br>受講生用の鑑定ツールで情報を整理し、AIと組み合わせて、鑑定レポート、相談の流れ、SNS投稿、商品説明、案内文などに展開していきます。</li>
-          <li><strong style="color:var(--gold-d);font-family:'Zen Kaku Gothic New',sans-serif;">商品・サービスを作る</strong><br>鑑定、個別相談、漢方茶提案、薬膳お茶会、サロンメニュー、講座、マルシェ出店、オンライン相談など、あなたの状況に合う形を設計します。</li>
-          <li><strong style="color:var(--gold-d);font-family:'Zen Kaku Gothic New',sans-serif;">仕入れ・価格・販売の流れを考える</strong><br>商品を扱う場合の仕入れ、価格設定、販売方法、提案の仕方を整理します。知識を商品やサービスとして成立させるための現実的な部分まで扱います。</li>
-          <li><strong style="color:var(--gold-d);font-family:'Zen Kaku Gothic New',sans-serif;">見せ方と伝え方を整える</strong><br>SNSで何を伝えるか、チラシやPOPでどう見せるか、パッケージや売り場で何を感じてもらうかを整理します。必要に応じて、ロゴ、パッケージ、商品名、売り場の見せ方、SNS投稿の方向性も相談できます。半年の実践後も1年間フォローします。</li>
-        </ul>
+      <div class="condition-box" style="margin-top:20px;">
+        <div class="condition-box-title">KAMPO STAND 修了認定（独自認定）</div>
+        <p class="flow" style="margin-bottom:14px;">プログラムを修了した方には、KAMPO STANDの独自認定をお渡しします。公的資格とは異なりますが、「学んだことを形にした証」として、発信や自己紹介の場面で活用いただけます。</p>
+        <p class="flow" style="font-size:13.5px;color:var(--ink-3);margin-bottom:0;">肩書きより、何ができるかが大切。とはいえ、形として残るものがあると、自信の支えになります。</p>
       </div>
     </div>
   </section>
-  <section class="section reveal">
-    <h2 class="section-title">なぜ今、この募集を<span class="title-br"><br></span>するのか</h2>
-    <div class="section-body">
-      <p class="takeaway">鑑定ツールとAIによって、<br><span class="gold-text">学んできた知識を仕事の形にしやすくなりました。</span></p>
 
-      <p class="flow">私は20年以上、店頭やカウンセリングの現場で、「どうすればその人に合う整え方を提案できるのか」を考え続けてきました。その中で辿り着いたのが、漢方と占いを掛け合わせて、体質と性質の両方から人を読み解く漢方占いという考え方です。</p>
-      <p class="flow">最近、その考え方を鑑定ツールとして形にし、さらにAIと組み合わせることで、鑑定結果をレポート、相談の流れ、SNS投稿、チラシ文、商品説明、案内文などへ展開しやすくなりました。ただAIに任せるのではなく、診断の根拠を持って使うことで、学んできた知識を仕事として動かしやすくなります。</p>
+  <!-- ===================== 講師プロフィール ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">なぜ、このプログラムを<span class="title-br"><br></span>私が届けるのか</h2>
+    <div class="section-body">
+      <img src="https://kampo-uranai.github.io/kampo-uranai/kaoru.png" alt="講師 かおる" style="display:block;width:100%;max-width:360px;margin:0 auto 36px;border-radius:3px;">
+
+      <p class="flow">おちゃぱんと申します。漢方と出会ったのは20年以上前、自分が体調を崩した24歳のときのことです。それ以前からデザインの仕事をしており、今もツールやロゴ、商品のパッケージや世界観づくりを手がけているのは、その経験があるからです。</p>
+
+      <p class="flow">漢方と出会ってからは、ドラッグストアで10年、店長として毎日たくさんの方の不調に向き合いました。登録販売者として、市販薬や漢方薬の相談を受け、その人に合うものを選ぶ現場に立ち続けてきました。カウンセリングや整体の経験も積み、やがて自分の漢方茶専門店「カンポースタンド」をオープン。今はオンラインでの販売やカウンセリングも続けています。</p>
+
+      <div style="display:grid;gap:14px;margin:28px 0;">
+        <img src="https://kampo-uranai.github.io/kampo-uranai/stand1.png" alt="カンポースタンド外観" style="display:block;width:100%;border-radius:3px;">
+        <img src="https://kampo-uranai.github.io/kampo-uranai/stand2.png" alt="カンポースタンド内観" style="display:block;width:100%;border-radius:3px;">
+      </div>
+
+      <p class="flow">漢方占いが生まれたのは、コロナでお店を閉めることになったことがきっかけでした。答えを探すように占いの本を読みあさるうちに、漢方と占いの間にあるつながりに気づいたんです。お店を失ったことが、漢方占いが生まれるきっかけになりました。</p>
+
+      <p class="flow">私自身、理論を学ぶだけでなく、売ること、選ぶこと、施術すること、相談を受けること、お店を続けること——20年以上、現場での研究と実践を続けてきました。</p>
+
+      <p class="flow">うまくいったことも、思うようにいかなかったこともあります。だからこそ、学びをどう形にしていくかを、一緒に考えられると思っています。</p>
+    </div>
+  </section>
+
+  <!-- ===================== このプログラムを届けられる3つの理由 ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">このプログラムを届けられる、<span class="title-br"><br></span>3つの理由</h2>
+    <div class="section-body">
+      <p class="takeaway">思想、システム、デザイン。<br><span class="gold-text">すべてを作れる伴走者です。</span></p>
+
+      <div class="pillars" style="margin-top:8px;">
+        <div class="pillar">
+          <div class="pillar-title">漢方占いの開発者として</div>
+          <p>22年の漢方の現場を経て確立した独自メソッドを、自らシステム（鑑定ツール・AI）として構築しました。使う側ではなく、作った側として、どう現場で動かすかを知っています。</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">デザイナーとして</div>
+          <p>ロゴ、パッケージ、メニュー表、SNSの世界観づくりまで、受講生の「見せ方」を一緒に設計できます。仕組みと意匠の両面からプロデュースできる伴走者は、そう多くはありません。</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">現場22年の実践者として</div>
+          <p>教科書の知識ではなく、ドラッグストア・漢方サロン・オンライン事業という現場で積み上げた実践知をそのままお渡しします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== なぜ今、この募集をするのか ===================== -->
+  <section class="section reveal">
+    <h2 class="section-title">なぜ今、<span class="title-br"><br></span>この募集をするのか</h2>
+    <div class="section-body">
+      <p class="takeaway">これまで個別講座でお伝えしてきた読み解き技術を、<br><span class="gold-text">鑑定ツールとAIも使いながら、仕事の形へ整えていきます。</span></p>
+
+      <p class="flow">私はこれまで、漢方占いの読み解きを個別講座でお伝えしてきました。その中で受講生さんからよく聞いたのは、「もっと早く知りたかった」「カウンセリングに自信が持てるようになった」という声でした。</p>
+      <p class="flow">一方で、漢方や薬膳、占いを学んできた方の中には、すでに人の役に立つ知識や経験を持っていても、それをどう仕事にすればいいかで迷っている方がたくさんいます。</p>
+      <p class="flow">最近は、鑑定ツールとAIによって、読み解いた内容をレポート、相談の流れ、商品説明、SNS投稿、案内文などへ展開しやすくなりました。ただし、AIに任せればよいわけではありません。大切なのは、AIを使う前に、その人をどう読み解くかという軸を持つことです。</p>
 
       <div class="ai-steps" style="margin:28px 0;">
         <div class="ai-step">
@@ -1741,16 +1961,12 @@ html, body {
         </div>
       </div>
 
-      <p class="flow">AI漢方占い鑑定ツールを公開したところ、「これを仕事にできますか？」「漢方茶や鑑定メニューにできますか？」「自分の活動にも取り入れられますか？」という相談をいただくようになりました。</p>
-      <p class="flow">漢方、薬膳、占いを学んできた方の中には、すでに人の役に立つ知識や経験を持っている方がたくさんいます。必要なのは、その学びを診断、商品、サービス、販売、発信、見せ方の形に組み立てることです。</p>
-      <p class="flow">今回の実践ビジネスプログラムは、そのために作った特別プログラムです。</p>
+      <p class="flow">弁証で悩んだことのある方。学んできた漢方や薬膳を、もっと自信を持って提案したい方。自分の仕事に「人の心と体を読む力」を加えたい方へ。そんな思いで、今回の特別モニターを募集しています。</p>
 
       <div class="tool-box">
         <p class="tool-box-text">「ご自愛漢方占い」は、生年月日からその人の体質と性質を読み取り、相性のいい養生を提案する一般向けのツールです。どなたでも無料でお試しいただけます。</p>
         <a class="tool-box-link" href="https://kampo-uranai.github.io/gojiai/index.html" target="_blank" rel="noopener">ご自愛漢方占いを試してみる →</a>
       </div>
-
-      <p class="flow" style="margin-top:24px;">そのため、今回は実践部分を個別に深く見ていく特別モニターとして募集します。</p>
     </div>
   </section>
 
@@ -1758,7 +1974,7 @@ html, body {
   <section class="section reveal">
     <h2 class="section-title">特別モニター募集について</h2>
     <div class="section-body">
-      <p class="flow">今回は、漢方占い実践ビジネスプログラムを特別モニターとして1週間限定で募集します。</p>
+      <p class="flow">今回は、漢方占い実践ビジネスプログラムを特別モニターとして募集します。</p>
       <p class="flow">一人ひとりの活動に合わせて、個別に設計と実践を見ていくため、今回は<span class="em">先着2名のみの募集</span>です。</p>
 
       <div class="price-card" style="margin-top:28px;">
@@ -1784,28 +2000,29 @@ html, body {
           <li><span class="ref-item">発信・見せ方設計のコンサルティング</span><span class="ref-price">数万円〜</span></li>
           <li><span class="ref-item">1年間のフォロー付きコーチング</span><span class="ref-price">数十万円〜</span></li>
         </ul>
-        <p class="ref-note">講座、個別コンサル、デザイン、商品開発、SNS相談、販促物制作などを個別に依頼すると、費用だけでなく、時間も手間も大きくかかります。このプログラムでは、必要な要素を一つの流れにまとめ、あなたの活動に合わせて実践しやすい形へ整えていきます。</p>
+        <p class="ref-note">金額だけを見ると大きく感じるかもしれません。ただ、このプログラムで扱うのは、半年間の講義だけではありません。漢方占いの読み解き、鑑定ツール、AI活用、相談設計、商品づくり、発信、見せ方、1年間のフォローまで含めて、自分の仕事の軸を作っていく内容です。</p>
       </div>
 
       <div class="limit-box" style="margin-bottom:26px;">
-        <div class="limit-box-title">なぜ2名なのか</div>
-        <p class="flow">このプログラムでは、鑑定ツールの活用、メニュー設計、商品づくり、価格設定、ロゴ・パッケージ、売り場の見せ方まで、一人ひとりの活動に合わせて個別に見ていきます。</p>
-        <p class="flow">内容を深く調整しながら進めるため、今回は先着2名に絞っています。</p>
-        <p class="flow">満席の場合は、次回募集のご案内をLINEでお送りします。</p>
+        <div class="limit-box-title">なぜ2名限定なのか</div>
+        <p class="flow">現在、既存の漢方占い講座で45名の方が学んでいます。その方々への対応と並行してお届けするため、一度に多くの方をお迎えすることができません。</p>
+        <p class="flow">また、このプログラムは個別対応が前提です。鑑定ツールのカスタマイズ、メニュー設計、発信の方向性、世界観づくりのデザインサポートまで、講師が一人ひとりの強みや背景に合わせて個別に伴走します。</p>
+        <p class="flow">丁寧にやろうとすると、物理的に2名が限界なのです。</p>
+        <p class="flow" style="font-size:13.5px;color:var(--ink-3);margin-bottom:0;">もしこのご案内を読んでいる今、枠がすでに埋まっていた場合も、LINEにキーワードを送っていただき、アンケートにご回答いただいた方には、次回募集の優先案内とキャンセル待ちの権利をお渡しします。</p>
       </div>
 
       <a class="btn" href="https://lin.ee/ux3HSzn" target="_blank" rel="noopener"><span class="btn-text">LINEで詳しい案内を受け取る</span></a>
-      <p class="btn-note">モニター先着2名限定</p>
+      <p class="btn-note">モニター先着2名限定｜6/26(金)24時まで</p>
     </div>
   </section>
 
-  <!-- ===================== クロージング ===================== -->
+  <!-- ===================== 最後のCTA ===================== -->
   <section class="section reveal">
-    <div class="section-body" style="margin-top:0;">
-      <p class="flow">たくさん学んできたからこそ、その知識を仕事やサービスとして使える形に変えていく時期があります。</p>
-      <p class="flow">あなたが積み重ねてきた学びを、診断・商品・販売・発信・見せ方の形にする方法を、一緒に考えられたらと思っています。</p>
-
-      <p class="flow" style="margin-top:24px;">まずは公式LINEで「ビジネスプログラム」と送ってください。<br>アンケート回答後、講座で実際に使用している特別資料をお送りします。<br>申し込みは、その内容を確認してから判断していただけます。</p>
+    <h2 class="section-title">まずは、アンケートにご回答ください</h2>
+    <div class="section-body" style="margin-top:44px;">
+      <p class="flow">学んできたことを、そろそろ自分の仕事として形にしたい方へ。</p>
+      <p class="flow">まずは公式LINEで「ビジネスプログラム」と送信してください。アンケートにご回答いただいた方へ、講座で実際に使用している特別資料PDFをお送りします。</p>
+      <p class="flow">資料をご覧いただいたうえで、ご自身の活動に合いそうかご確認ください。不安なことや確認したいことがあれば、LINEでお気軽にお送りいただけます。</p>
 
       <div class="line-steps" style="margin:28px auto;">
         <div class="line-step">
@@ -1827,7 +2044,7 @@ html, body {
           <div class="line-step-badge">3</div>
           <div class="line-step-body">
             <div class="line-step-label">STEP 3</div>
-            <div class="line-step-text">特典として<strong>「漢方占い特別資料」</strong>が届く</div>
+            <div class="line-step-text">特典として<strong>「漢方占い特別資料PDF」</strong>が届く</div>
             <div class="line-step-sub">「体質と性格を立体的に読む」——講座で実際に使用している資料の核心部分です</div>
           </div>
         </div>
@@ -1839,7 +2056,7 @@ html, body {
             <div class="line-step-sub">オンラインでプログラムについて詳しくお話できます。申し込みはその後、ご自身で判断いただけます。</div>
           </div>
         </div>
-        <div class="line-registered">いきなり申し込みではありません。まずは資料と案内を確認してから、ご自身に合うかどうか判断していただけます。<br><br>すでにLINE登録済みの方も、トーク画面で「ビジネスプログラム」と送るだけでOKです</div>
+        <div class="line-registered">いきなり申し込みではありません。まずは資料と案内を確認してから、ご自身に合うかどうか判断していただけます。<br><br>すでにLINE登録済みの方も、トーク画面で「ビジネスプログラム」と送るだけでOKです。</div>
       </div>
 
       <a class="btn" href="https://lin.ee/ux3HSzn" target="_blank" rel="noopener" style="margin-top:8px;"><span class="btn-text">LINEで詳しい案内を受け取る</span></a>
